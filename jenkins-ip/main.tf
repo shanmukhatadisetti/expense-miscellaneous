@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "shanmukhatadisetti"
-    key    = "expense-miscellaneous/terraform.statefile"
+    key    = "expense-miscellaneous/jenkins-ip/terraform.statefile"
     region = "us-east-1"
   }
 }
@@ -15,4 +15,5 @@ resource "aws_route53_record" "record" {
   type    = "A"
   zone_id = "Z10413961HT8PFBW9XTRT"
   records = [data.aws_instance.instance.private_ip]
+  ttl = 10
 }
