@@ -10,10 +10,10 @@ data "aws_instance" "instance" {
   instance_id = "i-0eb655c164c94df31"
 }
 
-#resource "aws_route53_record" "record" {
-#  name    = "jenkins.autonagar.in"
-#  type    = "A"
-#  zone_id = "Z10413961HT8PFBW9XTRT"
-#  records = [data.aws_instance.instance.public_ip]
-#  ttl = 10
-#}
+resource "aws_route53_record" "record" {
+  name    = "jenkins.autonagar.in"
+  type    = "A"
+  zone_id = "Z10413961HT8PFBW9XTRT"
+  records = [data.aws_instance.instance.public_ip]
+  ttl = 10
+}
